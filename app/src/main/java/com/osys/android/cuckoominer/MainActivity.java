@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setContentView(R.layout.activity_main);
 
-        Log.i("CUCKOOMINER", "MainActivity - onCreate");
         myView = (TextView)findViewById(R.id.gps);
         mySolnsView = (TextView)findViewById(R.id.cyclesFoundValue);
         myStartButton = (Button)findViewById(R.id.startButton);
@@ -78,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
                 startTime=SystemClock.uptimeMillis();
                 customHandler.postDelayed(updateTimeThread,0);
 
-                Log.i("CUCKOOMINER", "MainActivity - buttonClickCuckooSolver");
                 myStartButton.setEnabled(false);
                 myStopButton.setEnabled(true);
 
@@ -96,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 customHandler.removeCallbacks(updateTimeThread);
-                Log.i("CUCKOOMINER", "MainActivity - buttonClickCuckooSolver");
+
                 myStartButton.setEnabled(true);
                 myStopButton.setEnabled(false);
 
